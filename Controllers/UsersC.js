@@ -43,17 +43,15 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { email, password } = req.body;
 
     let user;
-    if (username) {
-      user = await User.findOne({ username: username });
-    } else if (email) {
+    if (email) {
       user = await User.findOne({ email: email });
     }
 
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "Invalid Email" });
     }
     const verifPassword = await bcrypt.compare(password, user.password);
     if (!verifPassword) {
@@ -71,11 +69,11 @@ const login = async (req, res) => {
       user: {
         id: user._id,
         name: user.name,
-        username: user.username,
+        surname: user.surname,
+        adresse: user.adresse,
         email: user.email,
-        username: user.username,
-        sex: user.sex,
-        age: user.age,
+        phone: user.phone,
+        play: user.play,
       },
     });
   } catch (error) {

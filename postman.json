@@ -1,9 +1,23 @@
-{
-  "name": "March",
-  "surname": "Stan",
-  "email": "StanMarch@gmail.com",
-  "adresse": "",
-  "phone": "",
-  "password": "",
-  "confimrPassword": ""
-}
+[
+  {
+    "register": [
+      {
+        "name": "March",
+        "surname": "Stan",
+        "email": "StanMarch@gmail.com",
+        "adresse": "2001 Bonanza Street South Park",
+        "phone": "0952784515",
+        "password": "Stan",
+        "confirmPassword": "Stan"
+      }
+    ]
+  },
+  {
+    "login": [
+      {
+        "email": "StanMarch@gmail.com",
+        "password": "Stan"
+      }
+    ]
+  }
+]

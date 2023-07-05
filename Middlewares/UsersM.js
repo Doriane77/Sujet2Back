@@ -32,5 +32,13 @@ const registerV = async (req, res, next) => {
 
   next();
 };
-
-module.exports = { registerV };
+const loginV = async (req, res, next) => {
+  const schema = Joi.object({
+    email: Joi.string().required(),
+    password: Joi.string().required(),
+  });
+  const result = schema.validate(req.body);
+  if (result.error) return res.status(400).send(result.error);
+  next();
+};
+module.exports = { registerV, loginV };
