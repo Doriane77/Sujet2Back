@@ -14,6 +14,12 @@ app.use(express.json());
 const userRoutes = require("./Routes/UsersR");
 app.use(userRoutes);
 
+const patrieRoutes = require("./Routes/PatriesR");
+app.use(patrieRoutes);
+
+const gameRoutes = require("./Routes/GameR");
+app.use(gameRoutes);
+
 app.all("*", (req, res) => {
   res.status(404).send("Page introuvable");
 });
