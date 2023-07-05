@@ -21,14 +21,14 @@
     ]
   },
   {
-    "login": [
+    "Play": [
       {
         "id": "64a54c2a724704ae83c8c663",
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGE1NGMyYTcyNDcwNGFlODNjOGM2NjMiLCJpYXQiOjE2ODg1NjU0MjIsImV4cCI6MTY4ODU2OTAyMn0.nHuGsP3wbUMTPfWihhsEmI4Hf8QFEiziutMXRUozfuk",
         "num1": 1,
-        "num2": 1,
-        "num3": 1,
-        "num4": 1,
+        "num2": 2,
+        "num3": 2,
+        "num4": 5,
         "num5": 1
       }
     ]
