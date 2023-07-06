@@ -2,12 +2,13 @@ const Patries = require("../Models/PatriesM");
 
 const register = async (req, res) => {
   try {
-    const { name, number } = req.body;
+    const { name, number, image } = req.body;
     let num = 1;
     let nombre = await Patries.find();
     const patrie = new Patries({
       name: name,
       number: number,
+      image: image,
       order: nombre.length + num,
     });
     await patrie.save();
@@ -17,6 +18,7 @@ const register = async (req, res) => {
         id: patrie._id,
         name: patrie.name,
         number: patrie.number,
+        image: image,
       },
     });
   } catch (error) {

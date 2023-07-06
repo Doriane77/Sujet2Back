@@ -5,6 +5,7 @@ const registerV = async (req, res, next) => {
   const schema = Joi.object({
     name: Joi.string().required(),
     number: Joi.number().required().min(0),
+    image: Joi.string().required(),
   });
   const result = schema.validate(req.body);
   if (result.error) return res.status(400).send(result.error);

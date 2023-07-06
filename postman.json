@@ -13,6 +13,15 @@
     ]
   },
   {
+    "patries": [
+      {
+        "name": "",
+        "number": 20,
+        "image": ""
+      }
+    ]
+  },
+  {
     "login": [
       {
         "email": "StanMarch@gmail.com",
@@ -22,9 +31,10 @@
   },
   {
     "Play": [
+      { "upNumber": "db.patries.updateMany({}, { $set: { number: 15 } })" },
       {
         "id": "64a54c2a724704ae83c8c663",
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGE1NGMyYTcyNDcwNGFlODNjOGM2NjMiLCJpYXQiOjE2ODg1NjU0MjIsImV4cCI6MTY4ODU2OTAyMn0.nHuGsP3wbUMTPfWihhsEmI4Hf8QFEiziutMXRUozfuk",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGE1NGMyYTcyNDcwNGFlODNjOGM2NjMiLCJpYXQiOjE2ODg2MzM5MDksImV4cCI6MTY4ODYzNzUwOX0.M2hF79S0-iWIrP0IDMb4ZgD8wYM9k6-TY9wc7RtpWn8",
         "num1": 1,
         "num2": 2,
         "num3": 2,
