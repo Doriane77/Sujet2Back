@@ -47,23 +47,24 @@ const play = async (req, res) => {
     // Vérifier si c'est un Yams (5 dés identiques)
     if (areAllNumbersIdentical) {
       winnings = 3;
-      result = "Yams ! Vous gagner 3 patisserie";
+      result = "Yams ! Vous gagner 3 patisserie !";
     }
     // Vérifier si c'est un carré (4 dés identiques)
     else if (identicalNumbers.length === 3 && verifnum) {
       winnings = 2;
-      result = "Carré ! Vous gagner 2 patisserie";
+      result = "Carré ! Vous gagner 2 patisserie !";
     }
     // Vérifier si c'est une double (2 paires)
     else if (identicalNumbers.length >= 2) {
       winnings = 1;
-      result = "Double ! Vous gagner 1 patisserie";
+      result = "Double ! Vous gagner 1 patisserie !";
     } else {
-      result = "Aucun gain !";
+      result = `Aucun gain ! Il vous reste ${req.user.play - 1} chance !`;
     }
+    let gain = [];
     if (winnings !== 0) {
       // await User.findOneAndUpdate({ _id: req.user._id }, { play: 0 });
-      let gain = [];
+
       for (let i = 1; i <= winnings; i++) {
         let patrie = await Patries.find({ number: { $gt: 0 } });
         let orderPatrie = Math.floor(Math.random() * patrie.length) + 1;
@@ -82,7 +83,7 @@ const play = async (req, res) => {
       await winner.save();
     }
     // await User.findOneAndUpdate({ _id: req.user._id }, { $inc: { play: -1 } });
-    res.status(201).json({ meesage: result });
+    res.status(201).json({ message: result, numeros: numbers, gain: gain });
   } catch (error) {
     res.status(500).send(error.message);
   }

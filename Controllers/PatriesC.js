@@ -25,5 +25,12 @@ const register = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
-
-module.exports = { register };
+const allPatries = async (req, res) => {
+  try {
+    const patries = await Patries.find();
+    res.status(201).json(patries);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+module.exports = { register, allPatries };

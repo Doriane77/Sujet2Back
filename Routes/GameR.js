@@ -4,7 +4,7 @@ const controller = require("../Controllers/GameC");
 const { gameV } = require("../Middlewares/GameM");
 const { authenticateToken } = require("../Middlewares/authToken");
 
-router.route("/Play").get(authenticateToken, gameV, controller.play);
 router.route("/Winners").get(controller.winners);
+router.route("/Play").get(authenticateToken, gameV, controller.play);
 
 module.exports = router;
