@@ -63,7 +63,7 @@ const play = async (req, res) => {
     }
     let gain = [];
     if (winnings !== 0) {
-      // await User.findOneAndUpdate({ _id: req.user._id }, { play: 0 });
+      await User.findOneAndUpdate({ _id: req.user._id }, { play: 0 });
 
       for (let i = 1; i <= winnings; i++) {
         let patrie = await Patries.find({ number: { $gt: 0 } });
@@ -82,7 +82,7 @@ const play = async (req, res) => {
       });
       await winner.save();
     }
-    // await User.findOneAndUpdate({ _id: req.user._id }, { $inc: { play: -1 } });
+    await User.findOneAndUpdate({ _id: req.user._id }, { $inc: { play: -1 } });
     res.status(201).json({ message: result, numeros: numbers, gain: gain });
   } catch (error) {
     res.status(500).send(error.message);
